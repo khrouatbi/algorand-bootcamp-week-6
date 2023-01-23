@@ -22,8 +22,6 @@ class TestContract(unittest.TestCase):
         cls.funding_acct_mnemonic = funding_acct_mnemonic
         cls.account_priv_key, cls.new_acct_addr = account.generate_account()
         cls.new_acct_mnemonic = mnemonic.from_private_key(cls.account_priv_key)
-
-        print("Generated new account: "+cls.new_acct_addr)
         cls.app_index = 0
         cls.creator_private_key = ''
         cls.user_private_key = get_private_key_from_mnemonic(funding_acct_mnemonic)
