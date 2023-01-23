@@ -8,7 +8,6 @@ import unittest
 
 algod_address = "https://testnet-api.algonode.cloud"
 indexer_address = "https://testnet-idx.algonode.cloud"
-# user declared account mnemonics
 funding_acct_mnemonic = funding_acct_mnemonic.replace(', ', ' ')
 
 unittest.TestLoader.sortTestMethodsUsing = None
