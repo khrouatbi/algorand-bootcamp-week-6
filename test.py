@@ -117,19 +117,19 @@ class TestContract(unittest.TestCase):
         self.assertEqual(global_state['VoteEnd'], voteEnd)
         self.assertEqual(global_state['RegBegin'], regBegin)
         self.assertEqual(global_state['RegEnd'], regEnd)
-        # wait for registration period to start
+        # wait for registration
         wait_for_round(TestContract.algod_client, regBegin)
 
-        # opt-in to application
+        # opt-in 
         print('start opt in')
         opt_in_app(TestContract.algod_client, TestContract.user_private_key, TestContract.app_index)
         wait_for_round(TestContract.algod_client, voteBegin)
 
-        # call application without arguments
+        # call application
         call_app(TestContract.algod_client, TestContract.user_private_key, TestContract.app_index, [b"vote", b"WinnerChoice"])
 
     
-        # wait for registration period to start
+        # wait for registration 
         wait_for_round(TestContract.algod_client, voteEnd)
 
         global_state = read_global_state(
